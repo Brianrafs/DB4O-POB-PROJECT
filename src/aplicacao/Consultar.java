@@ -1,8 +1,18 @@
 package aplicacao;
+/**********************************
+ * IFPB - Curso Superior de Tec. em Sist. para Internet
+ * POB - Persistencia de Objetos
+ * Prof. Fausto Ayres
+ *
+ */
+
 import java.util.List;
+
 import com.db4o.ObjectContainer;
 import com.db4o.query.Query;
-import modelo.Artista;
+
+import modelo.Carro;
+
 
 public class Consultar {
 	protected ObjectContainer manager;
@@ -12,7 +22,7 @@ public class Consultar {
 		consultar();
 		Util.desconectar();
 		
-		System.out.println("\n\n aviso: feche sempre o plugin OME antes de executar aplicaï¿½ï¿½o");
+		System.out.println("\n\n aviso: feche sempre o plugin OME antes de executar aplicação");
 	}
 
 	public void consultar(){

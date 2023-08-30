@@ -1,11 +1,12 @@
+package modelo;
 
 public class Apresentacao {
 	private int id;
 	private String data;
-	private String artista;
-	private String cidade;
+	private Artista artista;
+	private Cidade cidade;
 	private int precoIngresso;
-	public Apresentacao(int id, String data , String artista, String cidade, int precoIngresso) {
+	public Apresentacao(int id, String data , Artista artista, Cidade cidade, int precoIngresso) {
 		this.id = id;
 		this.artista = artista;
 		this.cidade = cidade;
@@ -23,16 +24,16 @@ public class Apresentacao {
 	public void setData(String data) {
 		this.data = data;
 	}
-	public String getArtista() {
+	public Artista getArtista() {
 		return artista;
 	}
-	public void setArtista(String artista) {
+	public void setArtista(Artista artista) {
 		this.artista = artista;
 	}
-	public String getCidade() {
+	public Cidade getCidade() {
 		return cidade;
 	}
-	public void setCidade(String cidade) {
+	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
 	}
 	public int getPrecoIngresso() {

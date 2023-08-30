@@ -1,11 +1,17 @@
 package aplicacao;
+/**********************************
+ * IFPB - Curso Superior de Tec. em Sist. para Internet
+ * POB - Persistencia de Objetos
+ * Prof. Fausto Ayres
+ *
+ */
 
 import java.util.List;
 
 import com.db4o.ObjectContainer;
 import com.db4o.query.Query;
 
-import modelo.Artista;
+import modelo.Carro;
 
 
 public class Deletar {
@@ -16,7 +22,7 @@ public class Deletar {
 		apagar();
 		Util.desconectar();
 		
-		System.out.println("\n\n aviso: feche sempre o plugin OME antes de executar aplicaï¿½ï¿½o");
+		System.out.println("\n\n aviso: feche sempre o plugin OME antes de executar aplicação");
 	}
 
 	public void apagar(){
@@ -31,7 +37,7 @@ public class Deletar {
 			Carro c =  resultados.get(0);
 			manager.delete(c);
 			manager.commit();
-			System.out.println("apagou carro AAA1100, mas nï¿½o apagou o seu motor nem o motorista");
+			System.out.println("apagou carro AAA1100, mas não apagou o seu motor nem o motorista");
 		}
 		else
 			System.out.println("carro inexistente");

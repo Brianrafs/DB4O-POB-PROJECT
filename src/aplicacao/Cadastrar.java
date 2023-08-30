@@ -1,28 +1,38 @@
 package aplicacao;
+/**********************************
+ * IFPB - Curso Superior de Tec. em Sist. para Internet
+ * POB - Persistencia de Objetos
+ * Prof. Fausto Ayres
+ *
+ */
+
 import com.db4o.ObjectContainer;
 
-import modelo.Artista;
-import modelo.Apresentacao;
-import modelo.Cidade;
+import modelo.Carro;
+import modelo.Motor;
+import modelo.Motorista;
+
 
 public class Cadastrar {
 	protected ObjectContainer manager;
+
 	public Cadastrar(){
 		manager = Util.conectarBanco();
 		cadastrar();
 		Util.desconectar();
+		
 		System.out.println("fim da aplicacao");
 	}
 
 
 	public void cadastrar(){
 		System.out.println("cadastrando...");
-		Artista carro ;
+		Carro carro ;
 
 		carro = new Carro("AAA1100", new Motor("zetec", 1.0), new Motorista("1111","joao"));
 		manager.store(carro);
 		manager.commit();
-
+		
 		carro = new Carro("BBB2200", new Motor("fire", 2.0), new Motorista("2222", "maria"));
 		manager.store(carro);
 		manager.commit();

@@ -1,3 +1,9 @@
+/**********************************
+ * IFPB - Curso Superior de Tec. em Sist. para Internet
+ * POB - Persistencia de Objetos
+ * Prof. Fausto Ayres
+ *
+ */
 
 package aplicacao;
 
@@ -5,7 +11,7 @@ import com.db4o.Db4oEmbedded;
 import com.db4o.ObjectContainer;
 import com.db4o.config.EmbeddedConfiguration;
 
-import modelo.Artista;
+import modelo.Carro;
 
 public class Util {
 	private static ObjectContainer manager;
