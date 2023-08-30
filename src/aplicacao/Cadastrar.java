@@ -1,16 +1,10 @@
 package aplicacao;
-/**********************************
- * IFPB - Curso Superior de Tec. em Sist. para Internet
- * POB - Persistencia de Objetos
- * Prof. Fausto Ayres
- *
- */
 
 import com.db4o.ObjectContainer;
 
-import modelo.Carro;
-import modelo.Motor;
-import modelo.Motorista;
+import modelo.Apresentacao;
+import modelo.Cidade;
+import modelo.Artista;
 
 
 public class Cadastrar {
@@ -27,18 +21,18 @@ public class Cadastrar {
 
 	public void cadastrar(){
 		System.out.println("cadastrando...");
-		Carro carro ;
+		Apresentacao apresentacao ;
 
-		carro = new Carro("AAA1100", new Motor("zetec", 1.0), new Motorista("1111","joao"));
-		manager.store(carro);
+		apresentacao = new Apresentacao("1", "29/03/2024", new Artista("Fausto Ayres"), new Cidade("João Pessoa"), 200);
+		manager.store(apresentacao);
 		manager.commit();
 		
-		carro = new Carro("BBB2200", new Motor("fire", 2.0), new Motorista("2222", "maria"));
-		manager.store(carro);
+		apresentacao = new Apresentacao("2","17/10/2023", new Artista("Arthur Lyra"),  new Cidade("Sapé"), 85);
+		manager.store(apresentacao);
 		manager.commit();
 
-		carro = new Carro("CCC3300", new Motor("equinox", 3.0),	new Motorista("3333", "jose"));
-		manager.store(carro);
+		apresentacao = new Apresentacao("3","07/09/2023", new Artista("Brian Rafael"), new Cidade("Campina Grande"), 125);
+		manager.store(apresentacao);
 		manager.commit();
 		
 		System.out.println("cadastrou.");

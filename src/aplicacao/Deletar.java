@@ -1,17 +1,11 @@
 package aplicacao;
-/**********************************
- * IFPB - Curso Superior de Tec. em Sist. para Internet
- * POB - Persistencia de Objetos
- * Prof. Fausto Ayres
- *
- */
 
 import java.util.List;
 
 import com.db4o.ObjectContainer;
 import com.db4o.query.Query;
 
-import modelo.Carro;
+import modelo.Apresentacao;
 
 
 public class Deletar {
@@ -22,25 +16,25 @@ public class Deletar {
 		apagar();
 		Util.desconectar();
 		
-		System.out.println("\n\n aviso: feche sempre o plugin OME antes de executar aplica��o");
+		System.out.println("\n\n aviso: feche sempre o plugin OME antes de executar aplicação");
 	}
 
 	public void apagar(){
-		//localizar o carro placa BBB2200 
+		//localizar a apresentação de id 2
 		Query q = manager.query();
-		q.constrain(Carro.class);  				
-		q.descend("placa").constrain("AAA1100");		 
-		List<Carro> resultados = q.execute(); 
+		q.constrain(Apresentacao.class);
+		q.descend("id").constrain(2);
+		List<Apresentacao> resultados = q.execute();
 	
 		if(resultados.size()>0) {
-			//apagar o carro
-			Carro c =  resultados.get(0);
-			manager.delete(c);
+			//apagar a apresentação
+			Apresentacao a =  resultados.get(0);
+			manager.delete(a);
 			manager.commit();
-			System.out.println("apagou carro AAA1100, mas n�o apagou o seu motor nem o motorista");
+			System.out.println("apagou a Apresentação 2 mas não apagou sua cidade nem seu artista");
 		}
 		else
-			System.out.println("carro inexistente");
+			System.out.println("Apresentação inexistente");
 	}
 
 

@@ -1,9 +1,3 @@
-/**********************************
- * IFPB - Curso Superior de Tec. em Sist. para Internet
- * POB - Persistencia de Objetos
- * Prof. Fausto Ayres
- *
- */
 
 package aplicacao;
 
@@ -11,7 +5,7 @@ import com.db4o.Db4oEmbedded;
 import com.db4o.ObjectContainer;
 import com.db4o.config.EmbeddedConfiguration;
 
-import modelo.Carro;
+import modelo.Apresentacao;
 
 public class Util {
 	private static ObjectContainer manager;
@@ -27,9 +21,9 @@ public class Util {
 		config.common().messageLevel(0);  // mensagens na tela 0(desliga),1,2,3...
 		
 		// habilitar cascata para alterar, apagar e recuperar objetos
-		config.common().objectClass(Carro.class).cascadeOnDelete(false);;
-		config.common().objectClass(Carro.class).cascadeOnUpdate(true);;
-		config.common().objectClass(Carro.class).cascadeOnActivate(true);
+		config.common().objectClass(Apresentacao.class).cascadeOnDelete(false);;
+		config.common().objectClass(Apresentacao.class).cascadeOnUpdate(true);;
+		config.common().objectClass(Apresentacao.class).cascadeOnActivate(true);
 		
 		//conexao local
 		manager = Db4oEmbedded.openFile(config, "banco.db4o");
