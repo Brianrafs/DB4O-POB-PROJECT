@@ -8,6 +8,7 @@ public class Apresentacao {
 	private int precoIngresso;
 	public Apresentacao(int id, String data , Artista artista, Cidade cidade, int precoIngresso) {
 		this.id = id;
+		this.data = data;
 		this.artista = artista;
 		this.cidade = cidade;
 		this.precoIngresso = precoIngresso;

@@ -26,7 +26,7 @@ public class Listar {
 		Query q = manager.query();
 		q.constrain(Apresentacao.class);
 		List<Apresentacao> resultados = q.execute();
-		for(Apresentcao a: resultados)
+		for(Apresentacao a: resultados)
 			System.out.println(a);
 		
 		System.out.println("\n---listagem de cidades:");
